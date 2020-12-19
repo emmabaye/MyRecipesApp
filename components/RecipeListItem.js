@@ -6,6 +6,7 @@ const RecipeListItem = ({
   index,
   numberOfRecipesSelected,
   setNumberOfRecipesSelected,
+  navigation,
 }) => {
   const [selected, setSelected] = useState(false);
 
@@ -20,6 +21,8 @@ const RecipeListItem = ({
           setNumberOfRecipesSelected(--numberOfRecipesSelected);
           return setSelected(false);
         }
+
+        navigation.navigate('RecipeView');
       }}
       onLongPress={(e) => {
         if (selected) {
